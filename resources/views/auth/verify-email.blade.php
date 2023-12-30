@@ -1,6 +1,15 @@
 <x-guest-layout>
+     {{-- ★追加部分 --}}
+     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+        <a href="/">
+            <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+        </a>
+        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+        {{-- 追加ここまで --}}
     <div class="mb-4 text-sm text-gray-600">
-        {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+        {{-- ★メッセージ変更 --}}
+        <p>ご登録ありがとうございます！メールを送信したので、ご確認ください。</p>
+        <p>もしメールが届いていない場合は、下記のボタンをクリックしてください。</p>
     </div>
 
     @if (session('status') == 'verification-link-sent')
@@ -27,5 +36,7 @@
                 {{ __('Log Out') }}
             </button>
         </form>
+      </div>
+     </div>
     </div>
 </x-guest-layout>

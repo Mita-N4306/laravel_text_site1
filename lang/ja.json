@@ -3,5 +3,9 @@
   "Email": "メールアドレス",
   "Password": "パスワード",
   "Confirm Password": "パスワード確認",
-  "REGISTER": "登録"
+  "Profile": "プロフィール",
+  "REGISTER": "登録",
+  "Resend Verification Email": "確認メールを再送する",
+  "Log Out": "ログアウト"
+
 }
