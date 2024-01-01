@@ -156,6 +156,7 @@ return [
     'attributes' => [
         'title' => '件名',
         'body' => '本文',
+        'email' => 'メールアドレス',
     ],
 
 ];
