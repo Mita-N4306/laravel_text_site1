@@ -2,7 +2,7 @@
     <a href="/">
      <x-application-logo class="w-20 h-20 fill-current text-gray-500"/>
     </a>
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ route('register') }}" enctype='multipart/form-data'>
         @csrf
 
         <!-- Name -->
@@ -19,6 +19,13 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+        <!-- Avatar -->
+        <div class="mt-4">
+            <x-input-label for="avatar" :value="__('プロフィール画像（任意・1MBまで）')" />
+
+            <x-text-input id="avatar" class="block mt-1 w-full rounded-none" type="file" name="avatar" :value="old('avatar')" />
+        </div>
+        
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
