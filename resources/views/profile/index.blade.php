@@ -13,6 +13,8 @@
                     <th class="p-3 text-left text-white">＃</th>
                     <th class="p-3 text-left text-white">名前</th>
                     <th class="p-3 text-left text-white">Email</th>
+                    <th class="p-3 text-left text-white">アバター</th>
+                    <th class="p-3 text-left text-white">編集</th>
                 </tr>
                 @foreach($users as $user)
                 <tr class="bg-white">
