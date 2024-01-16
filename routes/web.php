@@ -51,6 +51,8 @@ Route::middleware('verified')->group(function () {
     //管理者のみ閲覧可能にする
     Route::middleware(['can:admin'])->group(function(){
         Route::get('/profile/index',[ProfileController::class,'index'])->name('profile.index');
+        Route::get('/profile/adedit/{user}',[ProfileController::class,'adedit'])->name('profile.adedit');
+        Route::patch('/profile/adupdate/{user}',[ProfileController::class,'adupdate'])->name('profile.adupdate');
     });
 
 
