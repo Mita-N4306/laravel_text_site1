@@ -27,7 +27,7 @@
                      </div>
                     </td>
                     <td class="border-gray-light border hover:bg-gray-100 p-3">
-                     <a href="{{route('profile.adedit'.$user)}}">
+                     <a href="{{route('profile.adedit',$user)}}">
                       <x-primary-button class="bg-teal-700">編集</x-primary-button>
                      </a>
                     </td>
