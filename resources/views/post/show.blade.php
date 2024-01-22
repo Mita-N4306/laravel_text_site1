@@ -50,7 +50,7 @@
       <img src="{{ asset('storage/images/'.$post->image)}}" alt="画像" class="mx-auto" style="height:300px;">
      @endif
      <div class="text-sm font-semibold flex flex-row-reverse">
-      <p>{{ $post->user->name }}・{{ $post->created_at->diffForHumans() }}</p> {{--コメントが作成された日時を示すカラム(xx分前など)--}}
+      <p>{{ $post->user->name??'削除されたユーザー' }}・{{ $post->created_at->diffForHumans() }}</p> {{--コメントが作成された日時を示すカラム(xx分前など)--}}
      </div>
     </div>
      {{-- コメント表示部分 --}}
@@ -59,7 +59,7 @@
       {{$comment->body}}
       <div class="text-sm font-semibold flex flex-row-reverse">
         {{-- クラスを変更 --}}
-        <p class="float-left pt-4"> {{ $comment->user->name }} • {{$comment->created_at->diffForHumans()}}</p>
+        <p class="float-left pt-4"> {{ $comment->user->name??'削除されたユーザー' }} • {{$comment->created_at->diffForHumans()}}</p>
         {{-- アバター追加 --}}
         <span class="rounded-full w-12 h-12">
          <img src="{{asset('storage/avatar/'.($comment->user->avatar??'user_default.jpg'))}}">
