@@ -12,7 +12,7 @@
                     @include('profile.partials.update-profile-information-form')
                 </div>
             </div>
-            {{-- 追加部分 --}}
+            {{-- 追加部分 役割の付与・削除テーブル(管理者のみ操作可)--}}
             @if(isset($admin))
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">
@@ -20,17 +20,20 @@
                 </div>
             </div>
             @endif
+            {{-- パスワード変更(管理者変更不可) --}}
+            @if(!isset($admin))
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">
                     @include('profile.partials.update-password-form')
                 </div>
             </div>
-
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+            @endif
+            {{-- ユーザーがアカウント削除する(できないようにコメントアウト) --}}
+            {{-- <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">
                     @include('profile.partials.delete-user-form')
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </x-app-layout>
